@@ -3,8 +3,6 @@ package ru.smurtazin.experiments.io;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.Reader;
-import java.util.Scanner;
 
 /**
  * Created by a1 on 08.03.17.
@@ -13,18 +11,16 @@ public class PartialReading {
 
     public void workWithFile() throws IOException {
         FileInputStream in = null;
-//        Reader in = null;
         FileOutputStream out = null;
 
         int maxMemoSize = 30;
 
         try {
-            in = new FileInputStream("input.txt");
-//            in = new Reader("input.txt");
-            out = new FileOutputStream("output.txt");
+            in = new FileInputStream("./InputOutput/input.txt");
+            out = new FileOutputStream("./InputOutput/output.txt");
 
             int allSize = in.available();
-            byte[] data = new byte[allSize+ maxMemoSize];
+            byte[] data = new byte[allSize + maxMemoSize];
 
             System.out.println("allSize: " + allSize);
             System.out.printf("allSize / maxMemoSize + 1: %d \n", allSize / maxMemoSize + 1);

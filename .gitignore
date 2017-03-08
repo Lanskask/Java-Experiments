@@ -4,3 +4,6 @@
 .idea
 .git
 **/target/*
+
+!input.txt
+!output.txt
