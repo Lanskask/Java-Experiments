@@ -11,6 +11,8 @@
     <modules>
         <module>InputOutput</module>
         <module>Spring</module>
+        <module>JavaFaces</module>
+        <module>MyServlet</module>
     </modules>
 
     <dependencies>
