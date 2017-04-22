@@ -16,23 +16,24 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class FindBooks
  */
-@WebServlet(description = "The servlet that searches for books", urlPatterns = { "/books" }, name="FindBooks")
+//@WebServlet(description = "The servlet that searches for books", urlPatterns = { "/books" }, name="FindBooks")
+@WebServlet(urlPatterns = { "/books" }, name="FindBooks")
 public class FindBooks extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public FindBooks() {
+    /*public FindBooks() {
         super();
         // TODO Auto-generated constructor stub
-    }
+    }*/
 
     /**
      * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // Get or create the session
+        /*// Get or create the session
         request.getSession(true);
 
         PrintWriter out = response.getWriter();
@@ -40,14 +41,32 @@ public class FindBooks extends HttpServlet {
         out.println("<h2>Hello from FindBooks</h2>");
 
         //Destroy the session
-        request.getSession(true).invalidate();
+        request.getSession(true).invalidate();*/
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
+
+        out.println("<!DOCTYPE html>\n" +
+            "<html>\n" +
+            "<head>\n" +
+            "\t<title>Servlet 2 Title</title>\n" +
+            "</head>\n" +
+            "<body>\n" +
+            "<h1>HALLAW EVERYBADY</h1>" +
+            "\tLorem ipsum dolor sit amet, consectetur adipisicing elit. " +
+            "Mollitia repellat quibusdam voluptatum, dicta incidunt " +
+            "consectetur molestias doloribus maxime repudiandae assumenda aut, " +
+            "excepturi nihil sequi in eos natus perspiciatis nostrum. Quo.\n" +
+            "</body>\n" +
+            "</html>"
+        );
+        out.flush();
     }
 
     /**
      * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
      */
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    /*protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // TODO Auto-generated method stub
-    }
+    }*/
 
 }
